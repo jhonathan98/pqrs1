@@ -58,6 +58,7 @@ while ($r=$query->fetch_object()){
                       </div>
                     </div>
                  </div>
+
              </div>
     </fieldset>
    </section>
@@ -76,20 +77,16 @@ while ($r=$query->fetch_object()){
           </div>
         </div>
       <div class="control-group col-md-6">
-          <div class="form-group">
-            <label class="col-md-4 control-label">Área del funcionario</label>
-              <div class="col-md-4 selectContainer">
-                <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                  <select name="optA" class="form-control selectpicker" >
-                    <option value=" " >Seleccione su área</option>
-                    <option value="vivienda" >Vivienda</option>
-                    <option value="seguridad" >Seguridad</option>
-                    <option value="solicitudes" >Solicitudes</option>
-                  </select>
-                </div>
-              </div>
-          </div>
+        <div class="form-group">
+          <label class="col-md-4 control-label" >Nombre del funcionario</label>
+           <div class="col-md-4 inputGroupContainer">
+             <div class="input-group">
+               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+               <input class="form-control" type="text" name="Nombre_funcionario">
+             </div>
+           </div>
+        </div>
+
         </div>
    </section>
          <br>
@@ -108,19 +105,20 @@ while ($r=$query->fetch_object()){
                     </div>
                     <div class="control-group  col-md-6">
                       <div class="form-group">
-                        <label class="col-md-4 control-label">Estado de la solicitud</label>
+                        <label class="col-md-4 control-label">Área del funcionario</label>
                           <div class="col-md-4 selectContainer">
                             <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                               <select name="optA" class="form-control selectpicker" >
-                                <option value=" " >Seleccione el estado</option>
-                                <option value="leido" >Leido</option>
-                                <option value="procesando" >En proceso</option>
-                                <option value="completa" >Completado</option>
+                                <option value=" " >Seleccione su área</option>
+                                <option value="vivienda" >Vivienda</option>
+                                <option value="seguridad" >Seguridad</option>
+                                <option value="solicitudes" >Solicitudes</option>
                               </select>
                             </div>
                           </div>
                       </div>
+
                     </div>
               </section>
 
@@ -140,6 +138,46 @@ while ($r=$query->fetch_object()){
                           </div>
                             <div class="control-group col-md-6">
                               <div class="form-group">
+                                <label class="col-md-4 control-label">Estado de la solicitud</label>
+                                  <div class="col-md-4 selectContainer">
+                                    <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                      <select name="optA" class="form-control selectpicker" >
+                                        <option value=" " >Seleccione el estado</option>
+                                        <option value="leido" >Leido</option>
+                                        <option value="procesando" >En proceso</option>
+                                        <option value="completa" >Completado</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                              </div>
+
+                            </div>
+               </section>
+              <br>
+              <section class=" row text-center" >
+                          <div class="control-group col-md-6">
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" >Medio de ontacto</label>
+                               <div class="col-md-4 inputGroupContainer">
+                                 <div class="input-group">
+                                   <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                      <input  disabled class="form-control"  value="<?php echo $person->opcion_contacto; ?>"  name="contacto">
+                                 </div>
+                               </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" >Contacto</label>
+                               <div class="col-md-4 inputGroupContainer">
+                                 <div class="input-group">
+                                   <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                      <input  disabled class="form-control"  value="<?php echo $person->contacto; ?>"  name="contacto">
+                                 </div>
+                               </div>
+                            </div>
+                          </div>
+                            <div class="control-group col-md-6">
+                              <div class="form-group">
                                 <label class="col-md-4 control-label" >Fecha limite</label>
                                  <div class="col-md-4 inputGroupContainer">
                                    <div class="input-group">
@@ -148,10 +186,21 @@ while ($r=$query->fetch_object()){
                                    </div>
                                  </div>
                               </div>
+                              <div class="form-group">
+                                <label class="col-md-4 control-label" >Correo funcionario</label>
+                                 <div class="col-md-4 inputGroupContainer">
+                                   <div class="input-group">
+                                     <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                        <input   class="form-control"    name="correo_funcionario">
+                                   </div>
+                                 </div>
+
+                              </div>
                             </div>
                </section>
-
               <br>
+
+
 
               <section class=" row text-center" >
                         <div class="control-group col-md-6">
@@ -185,6 +234,15 @@ while ($r=$query->fetch_object()){
            <br>
 
              <section class="row text-center">
+               <div class="form-group">
+                 <label class="col-md-4 control-label" >Asunto</label>
+                  <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                      <input   class="form-control"    name="Asusto">
+                    </div>
+                  </div>
+               </div>
                <div class="form-group">
                  <label class="col-md-4 control-label" >Respuesta del funcionario</label>
                   <div class="col-md-4 inputGroupContainer">

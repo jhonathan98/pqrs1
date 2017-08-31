@@ -13,8 +13,7 @@
     <?php
             include "conexion.php";
             $user_id=null;
-            $sql1= "select id_solicitud,fecha_radicado from datos_solicitud";
-            $query = $con->query($sql1);
+
             session_start();
 
       ?>
@@ -26,42 +25,41 @@
           <div class="container">
               <h1 class="text-center">Bienvenido</h1>
               <h5 class="text-center"> Usuario <?php echo $_SESSION["usuario1"] ?> </h5>
+              <div class="row text-center">
+                <form method="post" action="listar.php">
+                   <input type="radio" class="wradio" id="peticion" name="radio1" value="Peticion" onclick="check(this.value)"> Peticion
+                   <input type="radio" class="wradio" id="queja" name="radio1" value="Queja" onclick="check(this.value)"> Queja
+                   <input type="radio" class="wradio" id="reclamo" name="radio1" value="Reclamo" onclick="check(this.value)"> Reclamo
+                   <input type="radio" class="wradio" id="solicitudes" name="radio1" value="Solicitudes" onclick="check(this.value)"> Solicitudes
+                   <input type="radio" class="wradio" id="felicitaciones" name="radio1" value="Felicitaciones" onclick="check(this.value)"> Felicitaciones
+                   <h1 id="texto" name="texto" ></h1>
+
+                </form>
+              </div>
          </div>
-       </header>
-         <?php if($query->num_rows>0):?>
-           <section class="row ">
-               <div class="container">
-                 <table class="table table-striped">
-                   <thead>
-                     <tr>
-                       <th>Numero radicado</th>
-                       <th>Fecha radicado</th>
-                       <th>Fecha limite</th>
-                       <th>Estado solicitud</th>
-                       <th></th>
-                     </tr>
-                   </thead>
-                   <tbody>
-                     <?php while ($r=$query->fetch_array()):?>
-                     <tr>
-                       <td><?php echo $r["id_solicitud"]; ?></td>
-                       <td><?php echo $r["fecha_radicado"]; ?></td>
-                       <td>No</td>
-                       <th id="estado">Sin leer</th>
-                        <td><a href="../funcionario.php?id=<?php echo $r["id_solicitud"];?>" class="btn btn-sm btn-warning" onclick="cambiarEstado();">Ver solicitud</a></td>
-                     </tr>
-                     <?php endwhile;?>
-                   </tbody>
-                 </table>
-               <?php else:?>
-                 <p class="alert alert-warning">No hay resultados</p>
-               <?php endif;?>
-         </div>
-       </section>
-        </div>
-        
-      </div>
-       <header>
+         <script>
+
+          function check(radio1) {
+            if (document.getElementById('peticion').value == radio1) {
+              texto.innerHTML = document.getElementById('peticion').value;
+            }else if (document.getElementById('queja').value == radio1) {
+              texto.innerHTML = document.getElementById('queja').value;
+            }else if (document.getElementById('reclamo').value == radio1) {
+              texto.innerHTML = document.getElementById('reclamo').value;
+            } else if (document.getElementById('solicitudes').value == radio1) {
+              texto.innerHTML = document.getElementById('solicitudes').value;
+            }else if (document.getElementById('felicitaciones').value == radio1) {
+              texto.innerHTML = document.getElementById("felicitaciones").value;
+            }
+            document.getElementById('txto').value = radio1;
+
+          }
+
+         </script>
+
+      <div class="wdatos"></div>
+
+
 
   </body>
   <script type="text/javascript">
@@ -73,4 +71,32 @@
         i++
       }
   </script>
+<script src="../js/jquery.js"></script>
+  <script>
+        $(document).ready(function(){
+          //getDatos( 'Peticion' )
+          $('.wradio').click(function(){
+
+            getDatos( $(this).val() )
+
+          })
+        })
+
+        function getDatos( valor )
+        {
+          $.ajax({
+            url : 'respuesta.php',
+            type : 'post',
+            data : { valor : valor },
+            success : function( e ){
+              $('.wdatos').html( e )
+            },
+            error : function(){
+
+            }
+
+          })
+        }
+</script>
+
 </html>

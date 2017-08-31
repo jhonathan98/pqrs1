@@ -23,7 +23,7 @@
       <button type="submit" class="btn btn-default">&nbsp;<i class="glyphicon glyphicon-search"></i>&nbsp;</button>
     </form>
     <ul class="nav navbar-nav navbar-right">
-            <li><a href="./ver.php">Salir</a></li>
+            <li><a href="ver.php">Salir</a></li>
     </ul>
   </div><!-- /.navbar-collapse -->
 </div>
