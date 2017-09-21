@@ -13,7 +13,7 @@ $mail = new PHPMailer(true);
 $mail->From = $emailalcualsevaaenviar;
 $mail->FromName = 'Nombre empresa';
 $mail->CharSet = "UTF-8";
-$mail->Subject = $asunto;
+$mail->Subject = $asunto; 
 $mail->AddAddress($from, $customer_name);
 $mail->Body = $html;
 $mail->AltBody = $html;
