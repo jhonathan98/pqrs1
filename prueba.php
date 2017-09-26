@@ -5,7 +5,7 @@ $sendgrid_apikey = getenv('SG.1gftG4brToWzfTPymW-B_A.A8rLmbb7nAmXsIj_Jncp8JMMYO0
 $sendgrid = new SendGrid($sendgrid_apikey);
 $url = 'https://api.sendgrid.com/';
 $pass = $sendgrid_apikey;
-$template_id = '<your_template_id>';
+$template_id = '<4129ad74-d6b9-45a3-9f72-920ac9e7ce85>';
 $js = array(
   'sub' => array(':name' => array('Elmer')),
   'filters' => array('templates' => array('settings' => array('enable' => 1, 'template_id' => $template_id)))
