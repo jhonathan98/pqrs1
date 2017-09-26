@@ -7,9 +7,9 @@ $pass = 'jhonathan123';
 $params = array(
     'api_user'  => $user,
     'api_key'   => $pass,
-    'to'        => 'jhonathan.cordoba4926@unaula.edu.co',
-    'subject'   => 'test of file sends',
-    'html'      => '<p> the HTML </p>',
+    'to'        => 'alexiscalderon123@hotmail.com',
+    'subject'   => 'Correo para ensayar Sendgrid',
+    'html'      => '<p> Correo de ensayo </p>',
     'text'      => 'the plain text',
     'from'      => 'example@pqrs.com',
   );
