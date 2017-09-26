@@ -7,7 +7,7 @@ $pass = 'jhonathan123';
 $json_string = array(
 
   'to' => array(
-    'example1@sendgrid.com', 'example2@sendgrid.com'
+    'alexiscalderon123@hotmail.com', 'jhonathan.cordoba4926@unaula.edu.co'
   ),
   'category' => 'test_category'
 );
@@ -17,7 +17,7 @@ $params = array(
     'api_user'  => $user,
     'api_key'   => $pass,
     'x-smtpapi' => json_encode($json_string),
-    'to'        => 'miguel.sierragi@unaula.edu.co',
+    'to'        => 'miguel-sg01@hotmail.com',
     'subject'   => 'testing from curl',
     'html'      => 'testing body',
     'text'      => 'testing body',
