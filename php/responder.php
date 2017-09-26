@@ -2,6 +2,8 @@
 
 require '../PHPMailer_v5.1/class.phpmailer.php';
 
+ $mail->isSMTP();
+
 $html = "respuesta: ".$_POST["respuesta"];
 
 $emailalcualsevaaenviar = 'william.calderon6148@unaula.edu.co'; // correo al cual se va enviar
