@@ -2,7 +2,7 @@
 
 $url = 'https://api.sendgrid.com/';
 $user = 'dylasx';
-$pass = 'dylas123';
+$pass = '';
 
 $json_string = array(
 
