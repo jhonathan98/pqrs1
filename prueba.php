@@ -2,12 +2,12 @@
 
 $url = 'https://api.sendgrid.com/';
 $user = 'alexis666';
-$pass = 'alexis123';
+$pass = '';
 
 $json_string = array(
 
   'to' => array(
-    'jhonathan.cordoba4926@unaula.edu.co', 'alexiscalderon123@hotmail.com'
+    'dylasx1@gmail.com', 'alexiscalderon123@hotmail.com'
   ),
   'category' => 'test_category'
 );
