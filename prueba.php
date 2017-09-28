@@ -2,7 +2,7 @@
 
 $url = 'https://api.sendgrid.com/';
 $user = 'dylasx';
-$pass = '';
+$pass = 'dylas123';
 
 $json_string = array(
 
@@ -18,10 +18,10 @@ $params = array(
     'api_key'   => $pass,
     'x-smtpapi' => json_encode($json_string),
     'to'        => 'example3@sendgrid.com',
-    'subject'   => 'Testeo final',
-    'html'      => 'testing body',
-    'text'      => 'testing body',
-    'from'      => 'example@sendgrid.com',
+    'subject'   => 'Prueba Mailer PQRS',
+    'html'      => 'Esto es una prueba de mailer para PQRS',
+    'text'      => 'Esto es una prueba de mailer PQRS',
+    'from'      => 'municipio@ingeniaserPQRS.com',
   );
 
 
